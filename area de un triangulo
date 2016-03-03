@@ -1,0 +1,16 @@
+Proceso area1
+	definir a,b,c,p,area como real;
+	escribir "ingrese los lados del triangulo";
+	escribir "ingrese el valor de a";
+	leer a;
+	escribir "ingrese el valor de b";
+	leer b;
+	escribir "ingrese el valor de c";
+	leer c;
+	p<-(a+b+c)/2;
+	area<-raiz(p*(p-a)*(p-b)*(p-c));
+	escribir  "el valor del perimetro es";
+	escribir p;
+	escribir "el valor del area es";
+	escribir a;
+FinProceso

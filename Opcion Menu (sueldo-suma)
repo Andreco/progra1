@@ -1,0 +1,59 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define IVA 0.13 
+#define AFP 0.1271
+ using namespace std; 
+  
+ void main() 
+ { 
+	 int opcion,r,n,i,a,b,x; 
+	 float sb,sn; 
+	 do {
+	 cout<<"                                           Menu\n";  
+	
+	 
+	 cout<<"Ingrese la opcion que desea realizar"<<endl;
+	 cout<<"1.- Salario"<<endl;
+	 cout<<"2.-suma"<<endl; 
+	 cout<<"0.- Salir"<<endl; 
+	 cin>> opcion ; 
+	 switch (opcion) {
+	 
+	 case 1:
+		 cout<<"ingrese el numero de empleados"; 
+	cin>>n;
+	for (i=1;i<=n;i++)
+	 
+	{
+		cout<<"ingresar salario bruto"; 
+		cin>>sb;
+		if (sb>=7000)
+			sn=sb-(IVA+AFP)*sb;
+		else 
+			sn=sb-(AFP*sb); 
+		cout<<"el salario neto es"<<sn<<endl; 
+		getch(); 
+	};break;
+
+	 
+	 case 2: {
+		 cout<<"ingrese el valor de a";  
+   cin>>a;
+   cout<<"ingrese el valor de b: "; 
+   cin>> b;
+   x=a+b;
+   cout<<"la suma es :"<<x;
+  
+   getch();
+
+	 };break;
+
+      case 0: 
+		 cout<<"salir";break; 
+	 default: cout<<"opcion invalida"<<endl;
+     }
+ 
+	 } while (opcion != 0);
+     getch();
+      }

@@ -1,0 +1,31 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h" 
+using namespace std; 
+void main () 
+{ 
+	int hi, mi, si, hf, mf, sf, ht, mt, st, x; 
+	cout<<"ingrese el valor de hi:"; 
+	cin>>hi;
+	cout<<"ingrese el valor de mi:";
+	cin>>mi;
+	cout<<"ingrese el valor de si:"; 
+	cin>>si;
+	cout<<"ingrese el valor de hf:"; 
+	cin>>hf; 
+	cout<<"ingrese el valor de mf:"; 
+	cin>>mf;
+	cout<<"ingrese el valor de sf:"; 
+	cin>>sf;
+	x=(hf*3600+mf*60+sf)-(hi*3600+mi*60+si);
+	ht=x/3600;
+	x=x-ht*3600;
+	mt=x/60;
+	x=x-mt*60;
+	st=x;
+	cout<<"la diferencia de hora es:"<<ht<<endl;
+	cout<<"la diferencia de minutos son:"<<mt<<endl;
+	cout<<"la diferencia de segundos son:"<<st<<endl; 
+	getch();
+	
+}

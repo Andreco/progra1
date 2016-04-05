@@ -1,0 +1,48 @@
+#include "stdafx.h"
+#include <iostream> 
+#include "conio.h" 
+#include "Math.h"
+#define  pi 3.1415
+using namespace std;
+void main() 
+
+{
+	int opcion,l,r,a,b,h;
+
+	do {
+		cout<<"                                           Menu\n"; 
+		cout<<"Ingrese la opcion que desea realizar"<<endl;
+		cout<<"1.-area de un cuadrado"<<endl;
+		cout<<"2.-area de un circulo"<<endl;
+		cout<<"3.-area de un triangulo"<<endl;
+		cout<<"4.-Salir"<<endl;
+
+		cin>>opcion;
+		
+		switch (opcion)
+		{
+		case 1: cout<<"ingrese el lado del cuadrado:";
+			    cin>> l;
+				a=(l*l);
+				cout<<"area del cuadrado es:"<<a;
+				break;
+		case 2:cout<<"ingrese el radio del circulo:";
+			  cin>>r;
+			  a=(pi*r*r);
+			  cout<<"area de circulo es:"<<a;
+			  break;
+		case 3: cout<<"ingrese la base del triangulo:";
+			cin>> b;
+			cout<<"ingrese la altura del triangulo:";
+			cin>>a;
+			a=(b*a)/2;
+			cout<<"area del triangulo es: "<<a;
+			break;
+case 0: 
+	cout << "Salir";break;
+	    default: cout << "Opcion invalida" << endl;
+     }
+     cout << "El resultado es "<<a<< endl;
+	 } while (opcion != 0);
+     getch();
+}

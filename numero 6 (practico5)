@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include <iostream> 
+#include "conio.h" 
+
+using namespace std;
+void main() 
+{ 
+	float a,b,c,x1,x2;
+	cout<<"ingrese el valor de a:";
+	cin>>a;
+	cout<<"ingrese el valor de b:";
+	cin>>b;
+	cout<<"ingrese el valor de c:";
+	cin>>c;
+	if (a==0){
+		cout<<"soluciones infinitas:";
+	}
+	else if (b*b-4*a*c<0){
+		cout<<"solucion imaginaria:";
+	} 
+	else {
+		x1=(-b+sqrt(b*b-4*a*c))/2*a;
+		x2=(-b-sqrt(b*b-4*a*c))/2*a; 
+		cout<<"la solucion de x1 es:"<<x1<<endl;
+		cout<<"la solucion de x2 es:"<<x2<<endl;
+	}
+	getch();
+}

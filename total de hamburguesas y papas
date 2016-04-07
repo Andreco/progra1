@@ -1,0 +1,64 @@
+#include "stdafx.h" 
+#include <iostream> 
+#include "conio.h" 
+ using namespace std; 
+ void main()
+ { 
+	 int opcion,n,h,hq, t,pf; 
+	 float s;
+
+	 do {
+	 cout<<"                                           Menu\n";  
+	 cout<<"Ingrese la opcion que desea realizar"<<endl;
+	 cout<<"1.-Hamburguesas"<<endl;
+	 cout<<"2.-Hamburguesas con queso"<<endl; 
+	 cout<<"3.-Papas Fritas"<<endl;
+	 cout<<"4.- Soda"<<endl; 
+	 cout<<"5.- Salir"<<endl;
+	 cin>>opcion;
+	 switch (opcion) {
+		 
+	 case 1:{
+			 cout<<"Ingrese la Cantidad de hamburguesas"<<endl;
+			 cin>>n; 
+			 if
+				 (h=3) 
+			 t=(h*n);
+			 cout<<"el total es:"<<t<<endl;
+			 getch();
+			};break;
+	 case 2: {
+		     cout<<"ingrese la cantidad de Hamburguesas con queso"<<endl; 
+			 cin>>n;
+			 if (hq=5)
+				 t=(hq*n); 
+			  cout<<"el total es:"<<t<<endl;
+			  getch(); 
+			 };break;
+	 case 3: { 
+		     cout<<"ingrese la cantidad de papas fritas"<<endl; 
+			 cin>>n;
+			 if (pf=2)
+				 t=(pf*n);
+			 cout<<"el total es:"<<t<<endl;
+			 getch();
+			 };break;
+	 case 4: { 
+		      cout<<"ingrese la cantidad de botella de soda"<<endl;
+			  cin>>n;
+			  if (s=2.5)
+				  t=(s*n);
+			  cout<<"el total es:"<<t<<endl; 
+			  getch();
+			 };break;
+
+
+		 case 0: 
+		 cout<<"salir";break; 
+	 default: cout<<"opcion invalida"<<endl;
+     }
+ 
+	 } while (opcion != 0);
+     getch();
+      }
+

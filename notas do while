@@ -1,0 +1,40 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h" //LIBRERIA PARA USAR system
+
+using namespace std;
+
+void main()
+
+
+{
+	float NP,P1,P2,P3,EF,Promedio,NF;
+	int i,n;
+	char resp;// PARA DECLARAR UNA VARIABLE LETRA
+	Promedio=0;
+	i=0;
+	do	 {
+		cout<<"INGRESE LA NOTA PRACTICA: "<<endl;
+		cin>>NP;
+		cout<<"INGRESE LA NOTA DEL PRIMER PARCIAL: "<<endl;
+		cin>>P1;
+        cout<<"INGRESE LA NOTA DEL SEGUNDO PARCIAL: "<<endl;
+		cin>>P2;
+        cout<<"INGRESE LA NOTA DEL TERCER PARCIAL: "<<endl;
+		cin>>P3;
+		cout<<"INGRESE LA NOTA DEL EXAMEN FINAL: "<<endl;
+		cin>>EF;
+		NF=(NP*0.2)+(((P1+P2+P3)/3)*0.40)+(EF*0.40);
+		Promedio=Promedio+NF;
+        i++;//i<-i+1 CONTADOR
+		cout<<"DESEA CONTINUAR:  ('n' para finalizar)"<<endl;
+		cin>>resp;
+ 		system("cls"); //PARA LIMPIAR LA PANTALLA
+
+	  }while (resp!='n');
+	     cout<< "EL PROMEDIO FINAL ES: "<<endl;
+	     cout<<Promedio/i;
+	 
+         getch();
+}

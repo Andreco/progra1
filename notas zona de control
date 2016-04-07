@@ -1,0 +1,48 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h" //LIBRERIA PARA USAR system
+
+using namespace std;
+
+void main()
+
+
+{
+	float NP,P1,P2,P3,EF,Promedio,NF;
+	int NR,i;
+	Promedio=0;
+	i=0;
+	//INICIE ZONA DE CONTROL
+	cout<<"BIENVENIDO USUARIO"<<endl;
+	cout<<"INGRESE EL NUMERO DE REGISTRO: (-999 PARA TERMINAR)"<<endl;
+	cin>>NR;
+	//FIN DE ZONA DE CONTROL
+
+	while (NR!=-999) // COMPARA SI EL USUARIO DIGITO  EL VALOR DE FINALIZACION
+
+	 {
+		cout<<"INGRESE LA NOTA PRACTICA: "<<endl;
+		cin>>NP;
+		cout<<"INGRESE LA NOTA DEL PRIMER PARCIAL: "<<endl;
+		cin>>P1;
+        cout<<"INGRESE LA NOTA DEL SEGUNDO PARCIAL: "<<endl;
+		cin>>P2;
+        cout<<"INGRESE LA NOTA DEL TERCER PARCIAL: "<<endl;
+		cin>>P3;
+		cout<<"INGRESE LA NOTA DEL EXAMEN FINAL: "<<endl;
+		cin>>EF;
+		NF=(NP*0.2)+(((P1+P2+P3)/3)*0.40)+(EF*0.40);
+		Promedio=Promedio+NF;
+		system("cls"); //PARA LIMPIAR LA PANTALLA
+        i++;//i<-i+1 CONTADOR
+		//se vuelve a repetir antes de repetir el mientras
+		cout<<"INGRESE EL NUMERO DE REGISTRO: "<<endl;
+		cin>>NR;
+
+	  }
+
+	cout<< "EL PROMEDIO FINAL ES: "<<endl;
+	cout<<Promedio/i;
+	getch();
+}

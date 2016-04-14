@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+ using namespace std; 
+ void main ()
+{
+ int p, i,n;
+ p=1;
+ do {
+ cout<<"ingrese el numero:"<<endl; 
+ cin>>n; 
+ i=1; 
+ cout<<"el numero es invalido"<<endl;
+ }while (n<=0);
+i=1;
+
+ while(i<=n)
+ { 
+	p=p*i;
+ i++; 
+ }
+ cout<<"el producto es:"<<p<<endl; 
+ getch(); 
+ }

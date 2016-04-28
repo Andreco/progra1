@@ -1,0 +1,26 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std; 
+void main()
+{
+	int n,i;
+	i=0;
+	
+	cout<<"Ingrese el numero positivo"<<endl;
+	cin>>n;
+	while (n>=i)
+	{
+	if (n%2==0)
+		cout<<"El numero es par"<<endl;
+	else 
+		cout<<"el numero es impar"<<endl;
+	}
+	i++;
+	
+			cout<<"ingrese numero positivo"<<endl;
+		getch();
+
+	
+}
+

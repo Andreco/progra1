@@ -1,0 +1,33 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+using namespace std; 
+bool num_par (int a); 
+void main ()
+{
+	bool z;
+	int numero,n,i; 
+	cout<<"ingrese el numero que desea repetir"<<endl; 
+	cin>>n; 
+	for (i=1;i<=n;i++)
+	{
+
+	cout<<"ingrese numero"<<endl; 
+	cin>>numero; 
+ z=num_par (numero); 
+	 if  
+		 (z)
+		 cout<<"es par"<<endl;
+	 else 
+		 cout<<"es impar"<<endl;
+	}
+	getch();
+
+} 
+bool num_par (int a)
+{ if (a%2==0) 
+return true; 
+else 
+return false;
+
+}

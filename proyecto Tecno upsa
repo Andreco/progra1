@@ -1,0 +1,278 @@
+#include"stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h"
+#include "string"
+#include "stdafx.h"
+
+
+using namespace std;
+
+void Menu_Principal();
+void Menu_Registrar_Cliente();
+void Menu_Ingresar_Cliente(string Usuario, int contrasena);
+void Ingresar_cliente();
+void Menu_Soya();
+void Menu_Precio();
+void Menu_Compra(int n);
+void Menu_Administrador();
+
+int main() {
+   
+    
+    Menu_Principal();
+    
+    
+}
+
+void Menu_Principal()
+{ int opcion;
+    string Usuario;
+    int contrasena=0;
+	system ("color 1A");
+
+    
+   do{
+	   cout<<"             Bienvenido a Agro-BolCruz\n";  
+	   cout<<"1.- Registrar cliente "<<endl;
+      cout<<"2.- Ingresar "<<endl;
+      cout<<"0.- Salir "<<endl;
+      
+       cout<<"Opcion:"<<endl;
+       cin>>opcion;
+	   system ("cls") ;
+       switch(opcion)
+       {case 1:Menu_Registrar_Cliente();
+               break;
+        case 2: Menu_Ingresar_Cliente(Usuario, contrasena);
+               break;
+        case 0: cout<<"Hasta luego"<<endl;
+               break;
+        default: cout<<"Opcion invalida"<<endl;
+       }
+       
+     }while(opcion !=0);
+  
+
+}
+
+void Menu_Registrar_Cliente()
+{
+    string Usuario;
+    int contrasena=0;
+   
+    cout<<"ingrese 's' para volver"<<endl;
+    cout<<"Ingrese su nombre de usuario: "<<endl;
+    cin>>Usuario;
+    if(Usuario == "s")
+        {Menu_Principal();
+        }
+    else{
+    cout<<"Ingrese contraseña: "<<endl;
+    cin>>contrasena;
+    Menu_Ingresar_Cliente(Usuario, contrasena);
+	getch();
+    }
+}
+
+void Menu_Ingresar_Cliente(string Usuario, int contrasena) //aqui tambien pueden ingresar los administradores
+{   string Ingresar, Administrador = "Administrador";
+    int contrasena_usuario, contrasena_admi;
+   system ("cls") ;
+    cout<<"Ya puede empezar a comprar."<<endl;
+    do{cout<<"Ingresar nombre de usuario:"<<endl;
+    cin>>Ingresar;
+   if(Ingresar != Usuario)
+   { if (Ingresar != "admi")
+     cout<<"Usuario no registrado"<<endl;
+   else{
+       cout<<"Ingrese contrasena:"<<endl;
+       cin>>contrasena;
+          if(contrasena == 201311)
+          {
+              Menu_Compra(0);
+          }
+          else{cout<<"contrasena incorrecta";}
+       }
+   }
+   else {
+       cout<<"Ingrese la contraeña: "<<endl;
+       cin>>contrasena_usuario;
+       
+      
+
+        if(contrasena_usuario == contrasena)
+            {
+           Menu_Compra(1);
+            }
+        else{cout<< "contrasena incorrecta";}
+   
+   }
+
+    }while(Ingresar != "s");
+    
+    if(Ingresar == "s")
+    {Menu_Principal();
+    }
+}
+
+
+void Menu_Compra(int n)
+{ int total_compra=0, opcion, cant_soya, cant_trigo, cant_maiz;
+    int  Disponible_soya = 150;
+    int  Disponible_trigo =200;
+    int  Disponible_maiz = 250;
+    int  precio_soya = 200;
+    int  precio_trigo =150;
+    int  precio_maiz = 100;
+    int acum_soya=0;
+    int acum_trigo=0;
+    int acum_maiz=0;
+    int pagar_soya=0;
+    int pagar_trigo=0;
+    int pagar_maiz=0;
+    int add_soya, add_trigo, add_maiz;
+    int pre_soya, pre_trigo,pre_maiz;
+
+    
+  if(n == 1)
+  {do{
+  cout<<"1.- SOYA hay disponible: "<<Disponible_soya<<" toneladas"<<endl ;
+  cout<<"2.-TRIGO hay disponible: "<<Disponible_trigo<<" toneladas"<<endl  ;
+  cout<<"3.-MAIZ hay disponible"<<Disponible_maiz<<" toneladas"<<endl  ;
+  cout<<"4.-SALIR ";
+ cout<<"terminar compra = 0"<<endl;
+  cout<<"Seleccione que producto comprar:"<<endl;
+  cin>>opcion;
+  switch (opcion)
+    {   case 1: 
+			cout<<"¿Cuantas toneladas de soya desea comprar?"<<endl;
+            cin>>cant_soya;
+            if(cant_soya > Disponible_soya)
+            {cout<<"Cantidad no disponible";
+            }
+            else{
+                Disponible_soya = Disponible_soya - cant_soya;
+                total_compra = (total_compra) + (cant_soya * precio_soya);
+                acum_soya=acum_soya + cant_soya;
+                pagar_soya = pagar_soya + (cant_soya * precio_soya);
+                cout<<"compro exitosamente "<<cant_soya<<"toneladas de soya"<<"por un valor de: "<<(cant_soya * precio_soya);
+            }
+            break;
+        case 2:
+			cout<<"¿cuantas toneladas de trigo desea comprar?"<<endl;
+            cin>>cant_maiz;
+            if(cant_maiz > Disponible_maiz)
+            {cout<<"Cantidad no disponible";
+            }
+            else{
+                Disponible_maiz= Disponible_maiz - cant_maiz;
+                total_compra = (total_compra) + (cant_maiz * precio_maiz);
+                acum_soya=acum_maiz + cant_maiz;
+                pagar_maiz = pagar_maiz + (cant_maiz * precio_maiz);
+                cout<<"compro exitosamente "<<cant_maiz<<" toneladas de maiz "<<"por un valor de:"<<(cant_maiz * precio_maiz);
+            }
+            break;
+        case 3:
+			cout<<"¿cuantas toneladas de maiz desea comprar?"<<endl;
+            cin>>cant_trigo;
+            if(cant_trigo > Disponible_trigo)
+            {cout<<"Cantidad no disponible";
+            }
+            else{
+                Disponible_trigo = Disponible_trigo - cant_trigo;
+                total_compra = (total_compra) + (cant_trigo * precio_trigo);
+                acum_trigo=acum_trigo + cant_trigo;
+                pagar_trigo = pagar_trigo + (cant_trigo * precio_trigo);
+                cout<<"compro exitosamente "<<cant_trigo<<" toneladas de trigo"<<"por un valor de: "<<(cant_trigo * precio_trigo);
+				break;
+            }
+		case 4:
+			cout<<"gracias por su compra:";
+            break;
+        default: cout<<"opcion invalida";
+            break;
+
+            cout<<"total a pagar: "<<total_compra<<endl;
+    }
+  }while (opcion != 0);
+  }
+  else{int opcion_2, opcion_3;
+  
+      cout<<"Bienvenido administrador"<<endl;
+      cout<<"1.- ingresar nuevo stock"<<endl;
+      cout<<"2.-modificar precios"<<endl;
+      cout<<"0.- salir"<<endl;
+      cout<<"Ingrese su opcion: "<<endl;
+      cin>>opcion_2;
+      do{
+          switch(opcion_2){
+              case 1: 
+				  cout<<"¿A que producto desea anadir stock?"<<endl;
+                      cout<<"1.- SOYA (cantidad actual " <<Disponible_soya<<" toneladas)"<<endl;
+                      cout<<"2.- TRIGO (cantidad actual " <<Disponible_trigo<<" toneladas)"<<endl;
+                      cout<<"3.- MAIZ (cantidad actual " <<Disponible_maiz<<" toneladas)"<<endl;
+                      cout<<"9.- salir"<<endl;
+                      cout<<"Ingrese su opcion: ";
+                      cin>>opcion_3;
+                  do{switch(opcion_3)
+                      {
+				  case 1: cout<<"Cuantas toneladas de SOYA desea anadir: "<<endl;
+                              cin>>add_soya;
+                              Disponible_soya = Disponible_soya + add_soya;
+                              break;
+                          case 2: cout<<"Cuantas toneladas de TRIGO desea anadir: "<<endl;
+                              cin>>add_trigo;
+                              Disponible_trigo = Disponible_trigo + add_trigo;
+                              break;
+                          case 3: cout<<"Cuantas toneladas de MAIZ desea anadir: "<<endl;
+                              cin>>add_maiz;
+                              Disponible_maiz = Disponible_maiz + add_maiz;
+                              break;
+                              
+                          case 9: Menu_Principal();
+                              break;
+                          default: cout<<"opcion invalida";
+                      }
+                  
+                  }while(opcion_3 =! 9);
+                  break;
+                  
+                  
+			  case 2: cout<<"¿A que producto desea cambiar el precio?"<<endl;
+                  cout<<"1.- SOYA (precio actual " <<precio_soya<<" dolares)"<<endl;
+                  cout<<"2.- TRIGO (precio actual " <<precio_trigo<<" dolares)"<<endl;
+                  cout<<"3.- MAIZ (precio actual " <<precio_maiz<<" dolares)"<<endl;
+                  cout<<"9.- salir"<<endl;
+                  cout<<"Ingrese su opcion: "<<endl;
+                  cin>>opcion_3;
+                  do{switch(opcion_3)
+                      {
+                          case 1: cout<<"Cual es el nuevo precio de la SOYA?"<<endl;
+                              cin>>pre_soya;
+                              precio_soya=pre_soya;
+                              break;
+                          case 2:cout<<"Cual es el nuevo precio del trigo? "<<endl;
+                              cin>>pre_trigo;
+                              precio_trigo = pre_trigo;
+                              break;
+                          case 3: cout<<"Cual es el nuevo precio del maiz? "<<endl;
+                              cin>>pre_maiz;
+                              precio_maiz = pre_maiz;
+                              break;
+                              
+                          case 9: Menu_Principal();
+                              break;
+                          default: cout<<"opcion invalida";
+                      }
+                      
+                  }while(opcion_3 =! 9);
+                   break;
+          }
+        
+      }while(opcion_2 != 0);
+  }
+    
+    
+}
+
